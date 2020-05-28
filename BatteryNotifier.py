@@ -14,9 +14,9 @@ import os
 import psutil
 import win10toast
 
-full_timer = 3000
-chrg_timer = 3000
-nchrg_timer = 3000
+full_timer = 600000
+chrg_timer = 3600000
+nchrg_timer = 3600000
 
 global battery
 global plugged
@@ -24,6 +24,7 @@ global percent
 battery = psutil.sensors_battery()
 plugged = battery.power_plugged
 percent = str(battery.percent)
+
 if plugged == False:
 	chrgr = "Not Plugged In"
 else:
